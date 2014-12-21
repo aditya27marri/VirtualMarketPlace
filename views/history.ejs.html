@@ -1,0 +1,73 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+<link rel="stylesheet"
+	href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+<title>History</title>
+</head>
+<body>
+	<form action="/" method="post">
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/EBay_logo.svg/318px-EBay_logo.svg.png" height="25" width="25"></a>
+		</div>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/logout"><i class="fa fa-edit"></i>Sign Out </a></li>
+				</ul>
+			</div>
+		</nav>
+<h3 align="center">Order History!!!</h3>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<button class="btn btn-primary" type="button" onclick="goBack()">Back</button>
+		<div class="row-fluid"
+			style="position: absolute; left: 200px; top: 100px; right: 100px;"
+			align="justify">
+	
+		<div class="row col-md-6 col-md-offset-2 custyle">
+			<br/><br/><table class="table table-striped custab">
+				<thead>
+					<tr>
+						<th>Items Sold</th>&nbsp;&nbsp;&nbsp;&nbsp;
+						<th>Items Bought</th>
+					
+						<!--  <th class="text-center">Action</th> -->
+					</tr>
+				</thead>
+				
+				
+	<% for(var i=0;i
+				<itemsSold.length;i++)
+{%>
+<tr>
+<td>
+					<%=itemsSold[i]%></td>&nbsp;&nbsp;&nbsp;&nbsp;
+				<td><%=itemsBought[i]%></td>
+				</tr>
+				<%} %>
+	
+				
+
+			</table>
+		</div>
+
+
+	</form>
+	<script type="text/javascript">
+		form = document.getElementById("form1");
+		function range1(val) { 
+			document.getElementById("valBox").innerHTML = " "
+					+ val;
+
+		}
+		
+function goBack() {
+    window.history.back()
+        }
+		
+	</script>
+</body>
+</html>

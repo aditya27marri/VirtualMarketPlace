@@ -1,0 +1,68 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css' />
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+<title>Sign up</title>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/"><img src="http://www.lackuna.com/wp-content/uploads/2012/01/ebay-logo.jpg"  height="25" width="25"></a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/login"><i class="fa fa-check"></i> login</a></li>
+      </ul>
+    </div>
+ </nav>   
+</hr>
+<div class="container" id="wrap">
+	  <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <form action="/register" method="post" accept-charset="utf-8" class="form" role="form">   <legend>Sign Up</legend>
+                    <h4>Create your virtualMarketPlace Account today !!</h4>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6">
+                            <input type="text" name="firstname" id="firstname" value="" class="form-control input-lg" placeholder="First Name"/>                       
+                       </div>
+                        <div class="col-xs-6 col-md-6">
+                            <input type="text" name="lastname" id="lastname" value="" class="form-control input-lg" placeholder="Last Name"  />                        
+                        </div>
+                    </div>
+                    <input type="text" name="email" id="email" value="" class="form-control input-lg" placeholder="Your Email"  />
+		    <input type="text" name="ssn" id="ssn" value="" class="form-control input-lg" placeholder="Your Ssn"  />
+                    <input type="password" name="password" id="password" value="" class="form-control input-lg" placeholder="Password"  />
+                    <input type="password" name="confirm_password" id="confirm_password" value="" class="form-control input-lg" placeholder="Confirm Password" />               
+                 <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit">
+                        Create my account</button>
+            </form>          
+          </div>
+</div>     
+	<div style="width:100&#37;;">
+	<div id="float1" style="width:30%;float:left;"> 
+	<p><ul>
+	<h3> Passwords must follow the below rules</h3>
+	<li> Password must contain one character minimum</li>
+	<li> Password must contain one numeric minimum. </li>
+	<li> Password should be of lenght 4-20.</li>
+	<li> No special Characters allowed.</li>
+	<li> Ex: abc123456</li></ul>
+	</p></div>
+	     
+	
+	<div id="float2" style="width:50%;float:right;"> 
+	<p> 
+	<ul>
+	<h3>SSN format </h3> 
+	<li> SSN should include dashes (-) in between digits</li>
+	<li> Format: ddd-dd-dddd</li>
+	<li> Ex: 123-45-6789</li>
+	</ul></p>
+	</div>
+	</div>	
+</div>
+</div>
+</body>
+</html>

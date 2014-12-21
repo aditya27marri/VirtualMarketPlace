@@ -1,0 +1,92 @@
+<html>
+<head>
+
+<link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css' /> 
+<link rel='stylesheet' href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css' /> 
+<link rel="stylesheet" href="/stylesheets/product_display.css" type="text/css" >
+</style>
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header" class="col-md-6">
+     <a class="navbar-brand" href="/"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/EBay_logo.svg/318px-EBay_logo.svg.png" height="30" width="30"><a>  
+  <div class="container-fluid">
+    <div class="content-wrapper">	
+		<div class="item-container">	
+			<div class="container">	
+				<div class="col-md-12">
+					<div class="product col-md-3 service-image-left">
+                    <% for(var j=0; j<rows.length; j++) { %>
+						<center>
+							<img id="item-display" src="<%= rows[j].imageName %>" alt=""></img>
+						</center>
+					</div>
+					
+					<div class="container service1-items col-sm-2 col-md-2 pull-left">
+						<center>
+							<a id="item-1" class="service1-item">
+								<img src="<%= rows[j].imageName %>" alt=""></img>
+							</a>
+							<a id="item-2" class="service1-item">
+								<img src="<%= rows[j].imageName %>" alt=""></img>
+							</a>
+							<a id="item-3" class="service1-item">
+								<img src="<%= rows[j].imageName %>" alt=""></img>
+							</a>
+						</center>
+					</div>
+				</div>
+					
+				<form action="/placeBid" method="post">
+				<div class="col-md-7">
+					<div class="product-title"><%= rows[j].productName %></div>
+					<div class="product-desc"><%= rows[j].productType %></div>
+					<hr>
+					<div class="product-stock">Quantity Available: <%= rows[j].quantity %></div>
+					<hr>
+
+				<div class="product-title">Bid</div>
+					<div class="product-desc">Base Price: <%= rows[j].basePrice %></div>
+					<hr>
+					<div class="product-stock">Quantity Available: <%= rows[j].quantity %></div>
+					<hr>
+					<div class="product-desc">minimum increment: <%= rows[j].increment %></div><hr>
+					<hr>
+					<div class="product-desc">Your Bid: 
+					<input type="text" id="currentPrice" name="currentPrice"></input>
+					<button type="submit"> Place your bid</div><hr>
+				</form>
+				<form action="/viewBidInfo">
+				<button type="submit"> View auction </button>
+				</form>
+				</div>
+			</div> 
+		</div>
+		<div class="container-fluid">		
+			<div class="col-md-12 product-info">
+					<ul id="myTab" class="nav nav-tabs nav_tabs">
+						
+						<li class="active"><a href="#service-one" data-toggle="tab">DESCRIPTION & REVIEWS</a></li>
+						
+					</ul>
+				<div id="myTabContent" class="tab-content">
+						<div class="tab-pane fade in active" id="service-one">
+						 
+							<section class="container product-info">
+								<h3> State: <%= rows[j].state %></h3>
+								<li>Id:<%= rows[j].productId %></li>
+								<li>Model: <%= rows[j].model %></li>
+								<li><%= rows[j].description %></li>
+							</section>
+										  
+						</div>
+					
+				</div>
+				</hr>
+			<% } %>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

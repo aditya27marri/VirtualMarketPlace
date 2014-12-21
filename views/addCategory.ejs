@@ -1,0 +1,69 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+<title>Add Category</title>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/"><img src="EBay_logo.svg.png"  height="25" width="25"></a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/home"><i class="fa fa-check"></i> Home</a></li>
+        <li><a href="/search"><i class="fa fa-edit"></i> Search </a></li>
+      </ul>
+    </div>
+ </nav>   
+</hr>
+<div id="signupbox"  margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <div class="panel-title">Add Category</div>
+                            <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="/login" onclick="$('#signupbox').hide(); $('#loginbox').show()">Category Name</a></div>
+                        </div>  
+                        <div class="panel-body" >
+                            <form id="signupform" class="form-horizontal" role="form">
+                                
+                                <div id="signupalert" style="display:none" class="alert alert-danger">
+                                    <p>Error:</p>
+                                    <span></span>
+                                </div>
+                                    
+                                
+                                  
+                                <div class="form-group">
+                                    <label for="email" class="col-md-3 control-label">Category Name</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="CategoryName" placeholder="Category Name">
+                                    </div>
+                                </div>
+                                    
+                                <div class="form-group">
+                                    <label for="firstname" class="col-md-3 control-label">Description</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="description" placeholder="description">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <!-- Button -->                                        
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <button id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Add Category</button>
+                                        
+                                    </div>
+                                </div>
+                          </form>
+                         </div>
+                    </div>
+
+               
+               
+                
+         </div> 
+    </div>  
+    </body>
+    </html>

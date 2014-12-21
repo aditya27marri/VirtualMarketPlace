@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/cart.css' />
+    <link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css' /> 
+    <link rel='stylesheet' href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css' /> 
+  </head>
+  
+  <body>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header" class="col-md-6">
+     <a class="navbar-brand" href="/"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/EBay_logo.svg/318px-EBay_logo.svg.png" height="30" width="30"></a>  
+  </div>
+    <div class="col-md-6">
+        <form class="navbar-form" role="search" action="search">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" name="search" id="search">
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit">Search<i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+        </form>
+    </div>
+    <div class="col-md-3">
+    <ul class="nav navbar-nav navbar-right">
+        <li><i class="fa fa-check"></i> Logged in as: <%=name%></li><br/>
+    </ul>
+    </div>
+  </div> 
+<ul>	
+ <li><a href="/signout"><i class="fa fa-edit"></i>Sign Out</a></li>
+ </ul>
+ <div class="col-md-10">
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="/DeleteUsers"><i class="fa fa-trash-o"></i>Delete users </a></li>
+        <li><a href="/DeleteProducts"><i class="fa fa-trash-o"></i>Delete products </a></li> 
+       <li><a href="/DeleteAuctions"><i class="fa fa-trash-o"></i>Delete Auctions </a></li>  
+    </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+    <thead>
+        <tr>
+             <th>Product Name</th>
+             <th>Product information</th>
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+    <% for(var i in rows) 
+                            { %>
+            <tr>
+                <td><%= rows[i].productName %></td>
+                <td>category: <%= rows[i].category %> brand: <%= rows[i].brand %></td>
+                <td class="text-center"> <a href="/deleteProductId/<%= rows[i].productId %>" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+            </tr>
+      <% } %>
+    </table>
+    </div>
+</div>
+</body>
+</html>

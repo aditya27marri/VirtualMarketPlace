@@ -1,0 +1,29 @@
+<html>
+<head>
+
+<link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css' /> 
+<link rel='stylesheet' href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css' /> 
+<link rel="stylesheet" href="/stylesheets/product_display.css" type="text/css" >
+</style>
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header" class="col-md-6">
+     <a class="navbar-brand" href="/"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/EBay_logo.svg/318px-EBay_logo.svg.png" height="30" width="30"></a></nav>
+
+                    <% for(var j=0; j<rows.length; j++) { %>
+					
+				<div class="product-stock">Product Id: <%= rows[j].productId %></div>
+				<div class="product-stock">Base Price: <%= rows[j].basePrice %></div>
+				<div class="product-stock">Bidder Id: <%= rows[j].buyerId %></div>
+					<hr>
+					<div class="product-desc">Price Quoted: <%= rows[j].currentPrice %></div>
+					<hr>
+				
+			</div> 
+
+		
+			<% } %>
+
+</body>
+</html>

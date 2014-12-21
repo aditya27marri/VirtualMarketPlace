@@ -1,0 +1,54 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+<link rel="stylesheet"
+	href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+<title>Login</title>
+</head>
+<body>
+<form action="/addReviews" method="post">
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/"><img src="images/ebaylogo.jpg"
+					height="25" width="25"></a>
+			</div>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="/"><i></i>Hi,Prabhu</a></li>
+				<li><a href="/logout"><i class="fa fa-edit"></i>Sign Out </a></li>
+			</ul>
+		</div>
+	</nav>
+	
+&nbsp;&nbsp;&nbsp;&nbsp;	<button class="btn btn-primary" type="button"
+				onclick="goBack()">Back</button>
+	<div class="row-fluid"
+		style="position: absolute; left: 200px; top: 100px; right: 100px;"
+		align="justify">
+	<div class="text-danger" role="alert">
+	
+<%=msg%>
+</div>
+</div>
+
+
+
+</form>
+	<script type="text/javascript">
+		form = document.getElementById("form1");
+		function range1(val) { 
+			document.getElementById("valBox").innerHTML = " "
+					+ val;
+
+		}
+		
+function goBack() {
+    window.history.back()
+        }
+		
+	</script>
+</body>
+</html>

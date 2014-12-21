@@ -1,0 +1,185 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+<link rel="stylesheet"
+	href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+<title>Update Account</title>
+</head>
+<body>
+<nav>
+	<div class="col-md-3">
+    <ul class="nav navbar-nav navbar-right">
+        <li><i class="fa fa-check"></i> Logged in as: <%=email%></a></li><br/>
+    </ul>
+    </div>
+  </div> 
+ <ul>	
+ <br/><br/><li><a href="/signout"><i class="fa fa-edit"></i>Sign Out</a></li>
+ </ul>
+  <ul>	
+ <br/><br/><li><a href="/getProducts"><i class="fa fa-edit"></i>Products</a></li>
+ </ul> 
+</nav>
+
+	<div id="signupbox"
+		margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<div class="panel-title">Update Account Details</div>
+				<div
+					style="float: right; font-size: 85%; position: relative; top: -10px"></div>
+			</div>
+			<div class="panel-body">
+				<form id="signupform" class="form-horizontal" role="form"
+					action="/updateAccount" method="post">
+
+					<div id="signupalert" style="display: none"
+						class="alert alert-danger">
+						<p>Error:</p>
+						<span></span>
+					</div>
+
+					<div class="form-group">
+						<label for="firstname" class="col-md-3 control-label">First
+							Name</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" name="firstname"
+								value="<%=firstName%>">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="lastname" class="col-md-3 control-label">Last
+							Name</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" name="lastname"
+								value="<%=lastName%>">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="email" class="col-md-3 control-label">Email</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" name="Email-id"
+								value="<%=email%>">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="email" class="col-md-3 control-label">Address</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" name="address"
+								value="<%=address%>">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="email" class="col-md-3 control-label">Zip Code</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" name="zipCode"
+								value="<%=zipCode%>">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="email" class="col-md-3 control-label">City</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" name="city"
+								value="<%=city%>">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="email" class="col-md-3 control-label">State</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" name="state"
+								value="<%=state%>">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="email" class="col-md-3 control-label">Account
+							Details</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" name="accountDetails"
+								value="<%=accountDetails%>">
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<label for="password" class="col-md-3 control-label">Password</label>
+						<div class="col-md-9">
+							<!-- <input type="password" id="pass1" class="form-control"
+								name="pass1" value="<"> -->
+							 <input type="password" name="pass1" id="pass1" class="form-control" value="%=password%>" onkeyup="checkPass(); return false;">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="password" class="col-md-3 control-label">Confirm
+							Password</label>
+						<div class="col-md-9">
+							<!-- <input type="password" id="pass2" class="form-control"
+								name="pass2" onkeyup="checkPass(); return false;"> -->
+								<input type="password" name="pass2" id="pass2" class="form-control" onkeyup="checkPass(); return false;">
+		
+							 	<span
+								id="confirmMessage" class="confirmMessage"></span>
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<label for="icode" class="col-md-3 control-label">SSN</label>
+						<div class="col-md-9">
+							<label class="col-md-1 control-label"><%=ssn%></label>
+						</div>
+					</div>
+
+
+
+
+					<div class="form-group">
+						<!-- Button -->
+						<div class="col-md-offset-3 col-md-9">
+							<button id="btn-signup" type="submit" class="btn btn-info">
+								<i class="icon-hand-right"></i>Update
+							</button>
+
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript">								
+function checkPass()
+{
+    //Store the password field objects into variables ...
+    var pass1 = document.getElementById('pass1');
+    var pass2 = document.getElementById('pass2');
+    //Store the Confimation Message Object ...
+    var message = document.getElementById('confirmMessage');
+    //Set the colors we will be using ...
+    var goodColor = "#66cc66";
+    var badColor = "#ff6666";
+    //Compare the values in the password field 
+    //and the confirmation field
+    if(pass1.value == pass2.value && pass1.value!=='' && pass2.value!==''){
+        //The passwords match. 
+        //Set the color to the good color and inform
+        //the user that they have entered the correct password 
+        pass2.style.backgroundColor = goodColor;
+        message.style.color = goodColor;
+        message.innerHTML = "Passwords Match!"
+           document.getElementById("btn-signup").disabled = false;
+    }else{
+        //The passwords do not match.
+        //Set the color to the bad color and
+        //notify the user.
+        pass2.style.backgroundColor = badColor;
+        message.style.color = badColor; 
+        message.innerHTML = "Passwords Do Not Match!"
+          document.getElementById("btn-signup").disabled = true;  
+    }
+}  
+</script>
+</body>
+</html>
